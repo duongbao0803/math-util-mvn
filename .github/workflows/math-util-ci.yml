@@ -1,0 +1,35 @@
+name: Math Utility Repo applying CI       # Cách ta đặt tên cho tất cả các lệnh ở dưới
+                                          # tên của danh sách các công việc cần làm khi ai đó
+                                          # push code, sửa code của kho
+
+on:            
+  push:                              # Khi ai đó sửa code
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:                                # Thì làm những việc dưới đây
+  build:                             # Build cái app
+
+    runs-on: ubuntu-latest           # 1. Mượn cái server bên Mỹ, cài OS Ubuntu
+
+    steps:
+    - uses: actions/checkout@v3      # 2. Download code về cái server vừa mượn
+    - name: Set up JDK 21            # 3. Cài JDK trên server vừa mượn
+      uses: actions/setup-java@v3     
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven (tạo .jar .war)        # 4. Mượn maven và chạy lệnh huyền thoại npm package           
+      run: mvn -B package --file pom.xml
+
+    - name: Distribute jar-war file # Gửi file .jar .war đi đâu, CD nhảy vào ...
+      run: mkdir staging && cp target/*.jar staging # tạo thư mục staging chứa file .jar .war sau khi build      
+     
+    - name: Make hyperlink to jar-war file # Tạo hyperlink để download build 
+      uses: actions/upload-artifact@v1
+      with:
+          name: HAY-DOWNLOAD-JAR-O-DAY   # đây là đường link trỏ tới file .jar .war
+          path: staging                  # nếu được build thành công
+
