@@ -44,3 +44,25 @@ public class MathUtilityTest {
         assertEquals(120, MathUtility.getFactorial(5));
     }
 }
+
+//3 TEST CASE TRÊN KO ĐẸP, BỐC MJUI2, BAD SMELLS VÌ CHỈ KHÁC NHAU PHẦN DATA
+// TRONG NGHỀ KIỂM THỬ CÓ 2 KĨ THUẬT ĐÓ LÀ TÁCH HÀM DATA KIỂM THỬ RA
+// 1 CHỖ, CHO DỄ NHÌN, DỄ QUẢN LÍ ĐƯỢC DATA THIẾU ĐÓ HAY KO
+
+//SAU ĐÓ TA ĐƯ BỘ DATA NÀY VÀO TRONG CÂU LỆNH SO SÁNH ASSERT()
+//QUA CÁC THAM SỐ (PARAMETER)
+// TỨC LÀ ASSERTEQUALS (EXPECTED, ACTUAL) LÀ 2 THAM SỐ
+// ỨNG VỚI BỘ DATA ĐƯỢC TÁCH RA
+//                  120     5!
+//                  720     61
+//                  24      4!
+//                  6       3!
+//                  2       2!
+//                  ..
+
+
+
+//              MẢNG [4][2] {0, 1} {1, 1} {2, 2} {3, 6} {5, 120} 
+//CODE NHÌN GÔN, PHÁT HIỆN ĐƯỢC THIỆU ĐỦ TEST DATA, TEST CASE
+//KĨ THUẬT TÁCH DATA KIỂM THỬ RA KHỎI CÂU LNEH65 SO SÁNH -> ĐƯỢC GỌI LÀ
+// DDT - DATA DRIVEN TESTING - KIỂM THỬ THEO HƯỚNG TÁCH DATA RIÊNG LẺ
