@@ -13,7 +13,7 @@
 
 #### Screen-shots
 
-![JUnit test script](https://github.com/duongbao0803/math-util-mvn-net1705/blob/master/screenshots/test%20script%20with%20junit.png?raw=true)
+![JUnit test script](https://raw.githubusercontent.com/duongbao0803/math-util-mvn-net1705/main/screenshots/test%20script%20with%20junit.png)
 
 ##### Content me via: tonbao0803@gmail.com
 
