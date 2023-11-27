@@ -15,6 +15,6 @@
 
 ![JUnit test script](https://raw.githubusercontent.com/duongbao0803/math-util-mvn-net1705/main/screenshots/test%20script%20with%20junit.png)
 
-##### Content me via: tonbao0803@gmail.com
+##### Contact me via: tonbao0803@gmail.com
 
 ##### Copyright &#169; 2023 Duong Bao
